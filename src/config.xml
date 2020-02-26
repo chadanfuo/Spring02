@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 와이어링 -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 
+xml읽음
+주소를만듬  (user1, user2 ,userRepository,pwChangeSvc ,authFailLogger,authenticationService)
+
+-->
+	<bean id="user1" class="net.madvirus.spring4.chap02.User">
+		<constructor-arg value="bkchoi"/>
+		<constructor-arg value="1234"/>
+	</bean>
+
+	<bean id="user2" class="net.madvirus.spring4.chap02.User">
+		<constructor-arg value="madvirus"/>
+		<constructor-arg value="qwer"/>
+	</bean>
+	
+	<bean id="userRepository" class="net.madvirus.spring4.chap02.UserRepository">
+		<property name="users">
+			<list>
+				<ref bean="user1"/>
+				<ref bean="user2"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pwChangeSvc" class="net.madvirus.spring4.chap02.PasswordChangeService">
+		<constructor-arg>
+			<ref bean="userRepository"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="authFailLogger" class="net.madvirus.spring4.chap02.AuthFailLogger">
+		<property name="threshold" value="2"/>
+	</bean>	
+	<bean id="authenticationService" class="net.madvirus.spring4.chap02.AuthenticationService">
+		<!--두개의주소  -->
+		<property name="failLogger" ref="authFailLogger"/>
+		<property name="userRepository" ref="userRepository"/>
+	</bean>	
+
+</beans>
