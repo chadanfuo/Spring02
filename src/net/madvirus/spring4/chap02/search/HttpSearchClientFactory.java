@@ -11,10 +11,10 @@ public class HttpSearchClientFactory implements SearchClientFactory{
 		this.encoding = encoding;
 	}
 	public void init(){
-		System.out.println("init");
-		System.out.println(this);
+		//System.out.println("init");
+		//System.out.println(this);
 		System.out.printf("HttpSearchClientFactory: 초기화 함 - %s, %s, %s\n", server,contentType,encoding);
-		System.out.println("end init");
+		//System.out.println("end init");
 	}
 	@Override
 	public String toString() {

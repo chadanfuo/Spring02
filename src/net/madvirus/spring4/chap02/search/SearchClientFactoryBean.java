@@ -27,7 +27,7 @@ public class SearchClientFactoryBean implements FactoryBean<SearchClientFactory>
 	}
 	
 	public SearchClientFactory getObject() throws Exception{
-		System.out.println("---SearchClientFactory");
+		//System.out.println("---SearchClientFactory");
 		if(this.searchClientFactory !=null)
 			return this.searchClientFactory;
 		SearchClientFactoryBuilder builder =new SearchClientFactoryBuilder();
@@ -41,11 +41,11 @@ public class SearchClientFactoryBean implements FactoryBean<SearchClientFactory>
 		return this.searchClientFactory;
 	}
 	public Class<?> getObjectType(){
-		System.out.println("getObjectType");
+		//System.out.println("getObjectType");
 		return SearchClientFactory.class;}
 	
 	public boolean isSingleton(){
-		System.out.println("isSingleton");
+		//System.out.println("isSingleton");
 		return true;}
 	
 	

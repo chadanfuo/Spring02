@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--src밑에 만약 패키지안에 있으면 패키지명 써야함  -->
+	<import resource="classpath:/config-sensor.xml"/>
+	<import resource="classpath:/config.xml"/>
+	
+</beans>

@@ -19,6 +19,7 @@ public class MainForShop {
 	}
 	private static void runByUsingXmlConfig(){
 //		GenericXmlApplicationContext ctx=new GenericXmlApplicationContext("classpath:config-shop.xml");
+		//초기화작업
 		AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(ConfigShop.class);
 		System.out.println("===========");
 		useBean(ctx);
